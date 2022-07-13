@@ -1,5 +1,4 @@
 import { Server, Socket } from "socket.io";
-import { Client } from "socket.io/dist/client";
 
 const EVENTS = {
   CONNECTION: "connection",
@@ -48,5 +47,5 @@ io.on(EVENTS.CONNECTION, (socket: Socket) => {
   });
 });
 
-io.listen(4000);
+io.listen(Number(process.env.PORT) || 4000);
 console.log("connected on port 4000");
